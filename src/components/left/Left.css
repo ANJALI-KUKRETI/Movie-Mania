@@ -1,0 +1,41 @@
+.left {
+  flex: 1;
+  padding: 1.5rem;
+  border-right: 1px solid rgb(48, 47, 47);
+}
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.logo span {
+  margin-right: 5px;
+  font-weight: 500;
+  font-size: 2.5rem;
+}
+.icon {
+  color: rgb(167, 5, 5);
+}
+.menu,
+.categories {
+  margin-top: 3rem;
+  color: rgb(170, 168, 168);
+  margin-left: 2rem;
+}
+.menu h3,
+.categories h3 {
+  margin-bottom: 1.5rem;
+}
+.menu div {
+  margin-top: 13px;
+  cursor: pointer;
+}
+.categories div {
+  margin-top: 13px;
+  cursor: pointer;
+}
+.menu div:hover,
+.categories div:hover {
+  color: white;
+}
