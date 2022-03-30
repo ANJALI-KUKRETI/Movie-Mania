@@ -1,0 +1,43 @@
+.favorites {
+  width: 100%;
+  overflow-y: scroll;
+}
+.favorites h2 {
+  margin-bottom: 1.5rem;
+}
+.fav-card {
+  /* padding: 5px; */
+  /* background-color: rgb(58, 57, 57); */
+  display: flex;
+  margin-bottom: 1.6rem;
+}
+.fav-card img {
+  height: 4.5rem;
+  width: 4rem;
+  margin-right: 2rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.details {
+  font-size: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.ratings {
+  display: flex;
+  justify-content: space-between;
+}
+.name-side {
+  font-size: 1.1rem;
+}
+.genre {
+  color: rgb(170, 168, 168);
+}
+.imdb {
+  background-color: yellow;
+  color: black;
+  font-weight: 500;
+  padding: 2px 4px;
+  border-radius: 5px;
+}
