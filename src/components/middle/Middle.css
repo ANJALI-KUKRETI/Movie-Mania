@@ -55,11 +55,14 @@
   letter-spacing: 1px;
 }
 
-.inner-content .release {
+.inner-content .vote {
   margin-right: 2rem;
   border: 2px solid white;
   padding: 1px 5px;
   border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .btns button {
@@ -87,9 +90,17 @@
 .add {
   background-color: rgb(14, 13, 13, 0.4);
 }
+.watch a {
+  text-decoration: none;
+  color: white;
+}
+.watch a:hover {
+  color: black;
+}
 .watch:hover {
   color: rgb(167, 5, 5);
   background-color: gainsboro;
+  color: black;
 }
 .add:hover {
   background-color: white;
