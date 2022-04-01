@@ -27,14 +27,13 @@
 .categories h3 {
   margin-bottom: 1.5rem;
 }
-.menu div {
-  margin-top: 13px;
-  cursor: pointer;
-}
+.menu div,
 .categories div {
   margin-top: 13px;
   cursor: pointer;
+  text-transform: capitalize;
 }
+
 .menu div:hover,
 .categories div:hover {
   color: white;

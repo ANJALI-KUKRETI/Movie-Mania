@@ -1,36 +1,98 @@
 import React, { useState, useEffect } from "react";
-
-import "./Middle.css";
-import Banner from "./Banner";
-import Row from "./Row";
+import { Routes, Route, NavLink } from "react-router-dom";
 import axios from "../axios/axios";
 import requests from "../axios/Requests";
+import HomePage from "../../pages/HomePage";
+import "./Middle.css";
 
 const Middle = () => {
-  const [trending, setTrending] = useState([]);
-  const [top, setTop] = useState([]);
+  const [trendingMovie, setTrendingMovie] = useState([]);
+  const [topMovie, setTopMovie] = useState([]);
+  const [trendingShow, setTrendingShow] = useState([]);
+  const [topShow, setTopShow] = useState([]);
+  const [bannerMovie, setBannerMovie] = useState([]);
+  const [bannerShow, setBannerShow] = useState([]);
 
   useEffect(() => {
-    async function getTrending() {
-      const res = await axios.get(requests.fetchTrending);
-      setTrending(res.data.results);
+    async function temp() {
+      async function getTrending() {
+        const res = await axios.get(requests.fetchTrendingMovie);
+        setTrendingMovie(res.data.results);
+        return res.data.results;
+      }
+      getTrending();
+      async function getTop() {
+        const res = await axios.get(requests.fetchTopRatedMovie);
+        setTopMovie(res.data.results);
+      }
+      getTop();
+      async function getTrendingShow() {
+        const res = await axios.get(requests.fetchTrendingShow);
+        setTrendingShow(res.data.results);
+        return res.data.results;
+      }
+      getTrendingShow();
+      async function getTopShow() {
+        const res = await axios.get(requests.fetchTopRatedShow);
+        setTopShow(res.data.results);
+      }
+      getTopShow();
+
+      //==================================
+      const movieForBanner = await getTrending();
+      setBannerMovie(
+        movieForBanner[Math.floor(Math.random() * movieForBanner.length - 1)]
+      );
+      const showForBanner = await getTrendingShow();
+      setBannerShow(
+        showForBanner[Math.floor(Math.random() * showForBanner.length - 1)]
+      );
     }
-    getTrending();
-    async function getTop() {
-      const res = await axios.get(requests.fetchTopRated);
-      setTop(res.data.results);
-    }
-    getTop();
+    temp();
   }, []);
+
   return (
     <div className="middle">
       <div className="header">
-        <div>Movies</div>
-        <div>TV Series</div>
+        <div>
+          <NavLink
+            to="/"
+            className={(navdata) => (navdata.isActive ? "active" : "link")}
+          >
+            Movies
+          </NavLink>
+        </div>
+        <div>
+          <NavLink
+            to="/tv"
+            className={(navdata) => (navdata.isActive ? "active" : "link")}
+          >
+            TV Series
+          </NavLink>
+        </div>
       </div>
-      <Banner />
-      <Row heading={"Trending Now"} data={trending} />
-      <Row heading={"Top Rated"} data={top} />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <HomePage
+              trending={trendingMovie}
+              top={topMovie}
+              banner={bannerMovie}
+            />
+          }
+        />
+        <Route
+          path="/tv"
+          element={
+            <HomePage
+              trending={trendingShow}
+              top={topShow}
+              banner={bannerShow}
+            />
+          }
+        />
+      </Routes>
     </div>
   );
 };

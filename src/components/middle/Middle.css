@@ -24,7 +24,22 @@
 .header div:hover {
   color: white;
 }
-
+.link {
+  text-decoration: none;
+  color: inherit;
+}
+.active {
+  text-decoration: none;
+  color: inherit;
+  border-bottom: 2px solid white;
+  color: white;
+}
+.activeL {
+  text-decoration: none;
+  color: inherit;
+  color: white;
+  font-size: 1.2rem;
+}
 .banner {
   /* position: relative; */
   object-fit: contain;

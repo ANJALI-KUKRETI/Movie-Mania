@@ -4,7 +4,7 @@ import "./favorites.css";
 const Favorites = () => {
   return (
     <div className="favorites">
-      <h2>Popular Movies</h2>
+      <h2>My WishList</h2>
       <div className="favorites-wrapper">
         <div className="fav-card">
           <img

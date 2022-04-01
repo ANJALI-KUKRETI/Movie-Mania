@@ -1,8 +1,20 @@
 import React from "react";
+import uuid from "react-uuid";
+import { NavLink } from "react-router-dom";
 import { RiMovie2Fill } from "react-icons/ri";
 import "./Left.css";
+import "../middle/Middle.css";
 
 const Left = () => {
+  const catArr = [
+    "action",
+    "comedy",
+    "romance",
+    "Drama",
+    "horror",
+    "family",
+    "thriller",
+  ];
   return (
     <div className="left">
       <div className="logo">
@@ -13,20 +25,55 @@ const Left = () => {
       </div>
       <div className="menu">
         <h3>MENU</h3>
-        <div>Home</div>
-        <div>Top Rated</div>
-        <div>Popular</div>
-        <div>Upcoming</div>
+        <div>
+          <NavLink
+            to="/"
+            className={(navdata) => (navdata.isActive ? "activeL" : "link")}
+            z
+          >
+            Home
+          </NavLink>
+        </div>
+        <div>
+          <NavLink
+            to="/:category"
+            className={(navdata) => (navdata.isActive ? "activeL" : "link")}
+            z
+          >
+            Top Rated
+          </NavLink>
+        </div>
+        <div>
+          <NavLink
+            to="/:category"
+            className={(navdata) => (navdata.isActive ? "activeL" : "link")}
+            z
+          >
+            Popular
+          </NavLink>
+        </div>
+        <div>
+          <NavLink
+            to="/:category"
+            className={(navdata) => (navdata.isActive ? "activeL" : "link")}
+            z
+          >
+            Upcoming
+          </NavLink>
+        </div>
       </div>
       <div className="categories">
         <h3>CATEGORIES</h3>
-        <div>Action</div>
-        <div>Comedy</div>
-        <div>Romance</div>
-        <div>Drama</div>
-        <div>Horror</div>
-        <div>Family</div>
-        <div>Thriller</div>
+        {catArr.map((cat) => (
+          <div key={uuid()}>
+            <NavLink
+              to="/:category"
+              className={(navdata) => (navdata.isActive ? "activeL" : "link")}
+            >
+              {cat}
+            </NavLink>
+          </div>
+        ))}
       </div>
     </div>
   );

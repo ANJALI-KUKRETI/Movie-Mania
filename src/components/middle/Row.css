@@ -12,11 +12,11 @@
 .card {
   position: relative;
   border: 15px solid rgb(17, 17, 17);
+  background-color: rgb(40, 39, 39);
 }
 .card img {
   width: 100%;
   height: 16rem;
-  border-radius: 3px;
   cursor: pointer;
 }
 
@@ -27,23 +27,21 @@
   cursor: pointer;
   padding: 6px 9px;
   border-radius: 5px;
-  background-color: rgb(112, 111, 111, 0.5);
+  background-color: rgba(11, 10, 10, 0.5);
+  font-size: 22px;
 }
+
 .card-content .info {
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, 0);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  bottom: 0.8rem;
-}
-.card-name {
-  margin-bottom: 5px;
-  font-size: 1.4rem;
-  font-weight: 500;
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 .card-content .plus:hover {
   background-color: rgb(167, 5, 5, 0.3);
+}
+.card-rating {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

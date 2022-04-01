@@ -4,6 +4,7 @@ import { BsPlusLg } from "react-icons/bs";
 import { AiFillStar } from "react-icons/ai";
 import { settings } from "./settings";
 import "./Row.css";
+import uuid from "react-uuid";
 
 const Row = ({ heading, data }) => {
   console.log(data);
@@ -14,7 +15,7 @@ const Row = ({ heading, data }) => {
       <div className="wrapper">
         <Slider {...settings}>
           {data.map((mov) => (
-            <div className="card">
+            <div className="card" key={uuid()}>
               <img
                 src={`https://image.tmdb.org/t/p/original/${mov.poster_path}`}
                 alt="demo"
@@ -26,11 +27,13 @@ const Row = ({ heading, data }) => {
                 <div className="info">
                   <div className="card-name">{mov.title || mov.name}</div>
                   <div className="card-rating">
-                    <AiFillStar style={{ color: "yellow" }} />
-                    <AiFillStar style={{ color: "yellow" }} />
-                    <AiFillStar style={{ color: "yellow" }} />
-                    <AiFillStar style={{ color: "yellow" }} />
-                    <AiFillStar style={{ color: "yellow" }} />
+                    <AiFillStar
+                      style={{
+                        color: "yellow",
+                        marginRight: "5px",
+                      }}
+                    />
+                    <div>{mov.vote_average}</div>
                   </div>
                 </div>
               </div>
