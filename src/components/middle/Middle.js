@@ -4,6 +4,8 @@ import axios from "../axios/axios";
 import requests from "../axios/Requests";
 import HomePage from "../../pages/HomePage";
 import "./Middle.css";
+import CategoryPage from "../../pages/CategoryPage";
+import DetailPage from "../../pages/DetailPage";
 
 const Middle = () => {
   const [trendingMovie, setTrendingMovie] = useState([]);
@@ -62,6 +64,7 @@ const Middle = () => {
             Movies
           </NavLink>
         </div>
+
         <div>
           <NavLink
             to="/tv"
@@ -92,6 +95,11 @@ const Middle = () => {
             />
           }
         />
+        <Route
+          path="/:category"
+          element={<CategoryPage trending={trendingShow} />}
+        />
+        <Route path="/detailPage" element={<DetailPage />} />
       </Routes>
     </div>
   );

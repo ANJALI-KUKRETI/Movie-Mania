@@ -7,13 +7,14 @@ import "../middle/Middle.css";
 
 const Left = () => {
   const catArr = [
-    "action",
-    "comedy",
-    "romance",
+    "Action",
+    "Comedy",
+    "Romance",
     "Drama",
-    "horror",
-    "family",
-    "thriller",
+    "Horror",
+    "Family",
+    "Thriller",
+    "Documentary",
   ];
   return (
     <div className="left">
@@ -24,50 +25,16 @@ const Left = () => {
         Movie Mania
       </div>
       <div className="menu">
-        <h3>MENU</h3>
-        <div>
-          <NavLink
-            to="/"
-            className={(navdata) => (navdata.isActive ? "activeL" : "link")}
-            z
-          >
-            Home
-          </NavLink>
-        </div>
-        <div>
-          <NavLink
-            to="/:category"
-            className={(navdata) => (navdata.isActive ? "activeL" : "link")}
-            z
-          >
-            Top Rated
-          </NavLink>
-        </div>
-        <div>
-          <NavLink
-            to="/:category"
-            className={(navdata) => (navdata.isActive ? "activeL" : "link")}
-            z
-          >
-            Popular
-          </NavLink>
-        </div>
-        <div>
-          <NavLink
-            to="/:category"
-            className={(navdata) => (navdata.isActive ? "activeL" : "link")}
-            z
-          >
-            Upcoming
-          </NavLink>
-        </div>
-      </div>
-      <div className="categories">
-        <h3>CATEGORIES</h3>
+        <NavLink
+          to="/"
+          className={(navdata) => (navdata.isActive ? "activeL" : "link")}
+        >
+          Home
+        </NavLink>
         {catArr.map((cat) => (
           <div key={uuid()}>
             <NavLink
-              to="/:category"
+              to={`/${cat}`}
               className={(navdata) => (navdata.isActive ? "activeL" : "link")}
             >
               {cat}
