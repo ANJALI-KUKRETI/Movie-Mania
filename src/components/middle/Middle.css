@@ -1,6 +1,6 @@
 .middle {
   flex: 4;
-  padding: 2.3rem 1.5rem;
+  /* padding: 2.3rem 1.5rem; */
   border-right: 1px solid rgb(48, 47, 47);
   overflow-y: scroll;
   display: flex;
@@ -82,7 +82,7 @@
 
 .btns button {
   margin-right: 20px;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   outline: none;
   padding: 6px 20px;
   border-radius: 3px;

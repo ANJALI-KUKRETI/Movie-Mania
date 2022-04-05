@@ -1,14 +1,12 @@
 import React from "react";
 import Slider from "react-slick";
 import uuid from "react-uuid";
-
 import { settings } from "./settings";
 import "./Row.css";
 
 import Card from "./Card";
 
-const Row = ({ heading, data, setFav }) => {
-  // console.log(data);
+const Row = ({ heading, data, setFav, type }) => {
   return (
     <div className="row">
       <div className="heading">{heading}</div>

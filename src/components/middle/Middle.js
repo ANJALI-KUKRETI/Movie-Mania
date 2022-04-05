@@ -55,25 +55,6 @@ const Middle = ({ setFav }) => {
 
   return (
     <div className="middle">
-      <div className="header">
-        <div>
-          <NavLink
-            to="/"
-            className={(navdata) => (navdata.isActive ? "active" : "link")}
-          >
-            Movies
-          </NavLink>
-        </div>
-
-        <div>
-          <NavLink
-            to="/tv"
-            className={(navdata) => (navdata.isActive ? "active" : "link")}
-          >
-            TV Series
-          </NavLink>
-        </div>
-      </div>
       <Routes>
         <Route
           path="/"
@@ -98,7 +79,10 @@ const Middle = ({ setFav }) => {
           }
         />
         <Route path="/:category" element={<CategoryPage setFav={setFav} />} />
-        <Route path="/detailPage" element={<DetailPage setFav={setFav} />} />
+        <Route
+          path="/detailPage/:id"
+          element={<DetailPage setFav={setFav} />}
+        />
       </Routes>
     </div>
   );

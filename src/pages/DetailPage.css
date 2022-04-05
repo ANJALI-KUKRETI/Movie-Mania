@@ -1,0 +1,68 @@
+.detailPage {
+  position: relative;
+}
+.layout {
+  position: absolute;
+  /* bottom: 0; */
+  width: 100%;
+  display: flex;
+  padding: 8rem 5rem;
+  z-index: 11;
+}
+.fadeBottom {
+  width: 100%;
+  z-index: 1;
+  position: absolute;
+  bottom: 0;
+  height: 70vh;
+  background-image: linear-gradient(
+    180deg,
+    transparent,
+    rgba(17, 17, 17, 0.8),
+    #111
+  );
+}
+.detailsIn {
+  margin-left: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.detailsIn div {
+  margin-top: 10px;
+}
+.image img {
+  height: 19rem;
+}
+.genres {
+  display: flex;
+}
+.genres div {
+  border: 2px solid rgb(131, 130, 130);
+  border-radius: 3px;
+  padding: 1px 4px;
+  margin: 5px;
+}
+.tagLine {
+  font-size: 1.1rem;
+}
+.genres {
+  font-weight: bold;
+}
+.descrip {
+  font-size: 0.95rem;
+}
+.imdbIn span {
+  background-color: yellow;
+  margin-right: 10px;
+  color: black;
+  font-weight: bold;
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+.wrapperIn {
+  margin: 1rem 3rem;
+}
+.wrapperIn h2 {
+  margin-bottom: 1rem;
+}

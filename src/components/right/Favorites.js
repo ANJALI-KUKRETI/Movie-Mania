@@ -25,7 +25,7 @@ const Favorites = ({ wishlist, removeWish }) => {
                   <div className="point">{wish.vote_average}</div>
                 </div>
                 <div className="delete" onClick={() => removeWish(wish.id)}>
-                  <IoIosRemoveCircleOutline />
+                  <IoIosRemoveCircleOutline style={{ color: "white" }} />
                 </div>
               </div>
             </div>

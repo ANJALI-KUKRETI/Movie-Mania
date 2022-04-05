@@ -19,7 +19,7 @@
   cursor: pointer;
 }
 .details {
-  width: 60%;
+  width: 50%;
   font-size: 0.85rem;
   display: flex;
   flex-direction: column;
@@ -54,4 +54,7 @@
 .delete {
   font-size: 1.1rem;
   cursor: pointer;
+}
+.delete :hover {
+  color: white;
 }

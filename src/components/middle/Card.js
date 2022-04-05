@@ -11,7 +11,7 @@ const Card = ({ mov, setFav }) => {
   }
   return (
     <div className="card">
-      <Link to="/detailPage">
+      <Link to={`/detailPage/${mov.id}`}>
         <img
           src={`https://image.tmdb.org/t/p/original/${mov.poster_path}`}
           alt="demo"
