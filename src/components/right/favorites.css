@@ -1,5 +1,5 @@
 .favorites {
-  width: 100%;
+  width: 90%;
   overflow-y: scroll;
 }
 .favorites h2 {
@@ -19,6 +19,7 @@
   cursor: pointer;
 }
 .details {
+  width: 60%;
   font-size: 0.85rem;
   display: flex;
   flex-direction: column;
@@ -27,9 +28,10 @@
 .ratings {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .name-side {
-  font-size: 1.1rem;
+  font-size: 0.8rem;
 }
 .genre {
   color: rgb(170, 168, 168);
@@ -40,4 +42,16 @@
   font-weight: 500;
   padding: 2px 4px;
   border-radius: 5px;
+}
+.ratings-in {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.point {
+  margin-left: 5px;
+}
+.delete {
+  font-size: 1.1rem;
+  cursor: pointer;
 }

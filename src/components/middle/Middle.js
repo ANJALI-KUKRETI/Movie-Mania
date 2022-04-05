@@ -7,7 +7,7 @@ import "./Middle.css";
 import CategoryPage from "../../pages/CategoryPage";
 import DetailPage from "../../pages/DetailPage";
 
-const Middle = () => {
+const Middle = ({ setFav }) => {
   const [trendingMovie, setTrendingMovie] = useState([]);
   const [topMovie, setTopMovie] = useState([]);
   const [trendingShow, setTrendingShow] = useState([]);
@@ -82,6 +82,7 @@ const Middle = () => {
               trending={trendingMovie}
               top={topMovie}
               banner={bannerMovie}
+              setFav={setFav}
             />
           }
         />
@@ -92,14 +93,12 @@ const Middle = () => {
               trending={trendingShow}
               top={topShow}
               banner={bannerShow}
+              setFav={setFav}
             />
           }
         />
-        <Route
-          path="/:category"
-          element={<CategoryPage trending={trendingShow} />}
-        />
-        <Route path="/detailPage" element={<DetailPage />} />
+        <Route path="/:category" element={<CategoryPage setFav={setFav} />} />
+        <Route path="/detailPage" element={<DetailPage setFav={setFav} />} />
       </Routes>
     </div>
   );

@@ -1,13 +1,16 @@
 import React from "react";
 import { BsPlusLg } from "react-icons/bs";
 import { AiFillStar } from "react-icons/ai";
-import uuid from "react-uuid";
 import "./Row.css";
 import { Link } from "react-router-dom";
 
-const Card = ({ mov }) => {
+const Card = ({ mov, setFav }) => {
+  function setAsFavorite() {
+    // console.log(mov.id);
+    setFav(mov);
+  }
   return (
-    <div className="card" key={uuid()}>
+    <div className="card">
       <Link to="/detailPage">
         <img
           src={`https://image.tmdb.org/t/p/original/${mov.poster_path}`}
@@ -15,7 +18,7 @@ const Card = ({ mov }) => {
         />
       </Link>
       <div className="card-content">
-        <div className="plus">
+        <div className="plus" onClick={setAsFavorite}>
           <BsPlusLg />
         </div>
         <div className="info">

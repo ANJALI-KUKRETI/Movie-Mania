@@ -6,45 +6,12 @@ import "./CategoryPage.css";
 import axios from "../components/axios/axios";
 import requests from "../components/axios/Requests";
 
-const CategoryPage = ({ trending }) => {
+const CategoryPage = ({ setFav }) => {
   // console.log(trending);
   const [page, setPage] = useState(1);
   const [data, setData] = useState([]);
   const params = useParams();
   const cName = params.category;
-  useEffect(() => {
-    async function outer() {
-      async function getGenre() {
-        const res = await axios.get(requests.getGenreList);
-        return res.data.genres;
-      }
-      const genres = await getGenre();
-      console.log(genres);
-      const genreId = genres.find(({ name }) => name === cName);
-      // setGenre(genreId.id);
-      async function getData() {
-        const res = await axios.get(
-          `/discover/movie?api_key=4a0eac3b6692e4c56952182a8412654a&with_genres=${genreId.id}&page=1`
-        );
-        console.log(res.data.results);
-        setData(res.data.results);
-      }
-      getData();
-      function loadMoreData() {
-        const temp = page + 1;
-        setPage(temp);
-      }
-      // window.onscroll = function () {
-      //   if (
-      //     window.innerHeight + document.documentElement.scrollTop ===
-      //     document.documentElement.offsetHeight
-      //   ) {
-      //     loadMoreData();
-      //   }
-      // };
-    }
-    outer();
-  }, [cName]);
   useEffect(() => {
     async function outer() {
       async function getGenre() {
@@ -63,9 +30,39 @@ const CategoryPage = ({ trending }) => {
         setData(res.data.results);
       }
       getData();
+      // window.onscroll = function () {
+      //   if (
+      //     window.innerHeight + document.documentElement.scrollTop ===
+      //     document.documentElement.offsetHeight
+      //   ) {
+      //     loadMoreData();
+      //   }
+      // };
     }
     outer();
-  }, [page]);
+  }, [cName, page]);
+  // useEffect(() => {
+  //   async function outer() {
+  //     async function getGenre() {
+  //       const res = await axios.get(requests.getGenreList);
+  //       return res.data.genres;
+  //     }
+  //     const genres = await getGenre();
+  //     console.log(genres);
+  //     const genreId = genres.find(({ name }) => name === cName);
+  //     console.log(genreId);
+  //     // setGenre(genreId.id);
+  //     async function getData() {
+  //       const res = await axios.get(
+  //         `/discover/movie?api_key=4a0eac3b6692e4c56952182a8412654a&with_genres=${genreId.id}&page=${page}`
+  //       );
+  //       console.log(res.data.results);
+  //       setData(res.data.results);
+  //     }
+  //     getData();
+  //   }
+  //   outer();
+  // }, [page]);
 
   // console.log(genre);
   return (
@@ -73,7 +70,7 @@ const CategoryPage = ({ trending }) => {
       <div className="cardHolder">
         {data.map((dt) => (
           <div className="inn" key={uuid()}>
-            <Card mov={dt} />
+            <Card mov={dt} key={uuid()} setFav={setFav} />
           </div>
         ))}
       </div>

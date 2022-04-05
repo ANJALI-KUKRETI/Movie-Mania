@@ -1,12 +1,13 @@
 import React from "react";
 import Slider from "react-slick";
+import uuid from "react-uuid";
 
 import { settings } from "./settings";
 import "./Row.css";
 
 import Card from "./Card";
 
-const Row = ({ heading, data }) => {
+const Row = ({ heading, data, setFav }) => {
   // console.log(data);
   return (
     <div className="row">
@@ -15,7 +16,7 @@ const Row = ({ heading, data }) => {
       <div className="wrapper">
         <Slider {...settings}>
           {data.map((mov) => (
-            <Card mov={mov} />
+            <Card mov={mov} key={uuid()} setFav={setFav} />
           ))}
         </Slider>
       </div>

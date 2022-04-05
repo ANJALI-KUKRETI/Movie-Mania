@@ -1,75 +1,36 @@
 import React from "react";
+import uuid from "react-uuid";
+import { IoIosRemoveCircleOutline } from "react-icons/io";
 import "./favorites.css";
 
-const Favorites = () => {
+const Favorites = ({ wishlist, removeWish }) => {
+  console.log(wishlist);
   return (
     <div className="favorites">
       <h2>My WishList</h2>
       <div className="favorites-wrapper">
-        <div className="fav-card">
-          <img
-            src="https://m.media-amazon.com/images/M/MV5BNDJjMzc4NGYtZmFmNS00YWY3LThjMzQtYzJlNGFkZGRiOWI1XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg"
-            alt="side"
-          />
-          <div className="details">
-            <div>
-              <div className="name-side">Mad Max</div>
-              <div className="genre">Action, Horror</div>
-            </div>
-            <div className="ratings">
-              <div className="imdb">IMDb</div>
-              <div className="poimt">7.4</div>
-            </div>
-          </div>
-        </div>
-        <div className="fav-card">
-          <img
-            src="https://m.media-amazon.com/images/M/MV5BNDJjMzc4NGYtZmFmNS00YWY3LThjMzQtYzJlNGFkZGRiOWI1XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg"
-            alt="side"
-          />
-          <div className="details">
-            <div>
-              <div className="name-side">Mad Max</div>
-              <div className="genre">Action, Horror</div>
-            </div>
-            <div className="ratings">
-              <div className="imdb">IMDb</div>
-              <div className="poimt">7.4</div>
+        {wishlist.map((wish) => (
+          <div className="fav-card" key={uuid()}>
+            <img
+              src={`https://image.tmdb.org/t/p/original/${wish.poster_path}`}
+              alt="side"
+            />
+            <div className="details">
+              <div>
+                <div className="name-side">{wish.title || wish.name}</div>
+              </div>
+              <div className="ratings">
+                <div className="ratings-in">
+                  <div className="imdb">IMDb</div>
+                  <div className="point">{wish.vote_average}</div>
+                </div>
+                <div className="delete" onClick={() => removeWish(wish.id)}>
+                  <IoIosRemoveCircleOutline />
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="fav-card">
-          <img
-            src="https://m.media-amazon.com/images/M/MV5BNDJjMzc4NGYtZmFmNS00YWY3LThjMzQtYzJlNGFkZGRiOWI1XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg"
-            alt="side"
-          />
-          <div className="details">
-            <div>
-              <div className="name-side">Mad Max</div>
-              <div className="genre">Action, Horror</div>
-            </div>
-            <div className="ratings">
-              <div className="imdb">IMDb</div>
-              <div className="poimt">7.4</div>
-            </div>
-          </div>
-        </div>
-        <div className="fav-card">
-          <img
-            src="https://m.media-amazon.com/images/M/MV5BNDJjMzc4NGYtZmFmNS00YWY3LThjMzQtYzJlNGFkZGRiOWI1XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg"
-            alt="side"
-          />
-          <div className="details">
-            <div>
-              <div className="name-side">Mad Max</div>
-              <div className="genre">Action, Horror</div>
-            </div>
-            <div className="ratings">
-              <div className="imdb">IMDb</div>
-              <div className="poimt">7.4</div>
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );

@@ -5,7 +5,7 @@ import axios from "../axios/axios";
 import { AiFillStar } from "react-icons/ai";
 import "./Middle.css";
 
-const Banner = ({ banner }) => {
+const Banner = ({ banner, setFav }) => {
   const [movieTrailer, setMovieTrailer] = useState([]);
   const type = banner.media_type;
   console.log(type);
@@ -57,7 +57,7 @@ const Banner = ({ banner }) => {
                 <FaPlay /> <span> PLAY</span>
               </a>
             </button>
-            <button className="add">
+            <button className="add" onClick={() => setFav(banner)}>
               <BsPlusLg /> <span> MY LIST</span>
             </button>
           </div>
