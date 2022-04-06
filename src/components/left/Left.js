@@ -15,6 +15,8 @@ const Left = () => {
     "Family",
     "Thriller",
     "Documentary",
+    "Crime",
+    "Fantasy",
   ];
   return (
     <div className="left">

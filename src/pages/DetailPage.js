@@ -4,13 +4,15 @@ import { FaPlay } from "react-icons/fa";
 import axios from "../components/axios/axios";
 import Slider from "react-slick";
 import uuid from "react-uuid";
-import { settings } from "../components/middle/settings";
+import { settingsTwo } from "../components/middle/settings";
 import "./DetailPage.css";
+import { type } from "@testing-library/user-event/dist/type";
 
 const DetailPage = () => {
   const [detail, setDetail] = useState({});
   const [genres, setGenres] = useState([]);
   const [casts, setCasts] = useState([]);
+  const [trailer, setTrailer] = useState("");
   const params = useParams();
   const dataId = params.id;
   useEffect(() => {
@@ -23,10 +25,32 @@ const DetailPage = () => {
       setGenres(res.data.genres);
     }
     getData();
+    async function getCasts() {
+      const res = await axios.get(
+        `/movie/${dataId}/credits?api_key=26ba5e77849587dbd7df199727859189&language=en-US`
+      );
+      setCasts(res.data.cast.slice(1, 15));
+    }
+    getCasts();
+    async function getTrailer() {
+      const request = await axios.get(
+        `/movie/${dataId}/videos?api_key=4a0eac3b6692e4c56952182a8412654a`
+      );
+      // console.log(request);
+      console.log(request.data);
+      setTrailer(
+        request.data.results.filter(
+          (mov) => mov.name === "Official Trailer" || mov.type === "Trailer"
+        )[0].key
+      );
+    }
+    getTrailer();
   }, [dataId]);
+  console.log(trailer);
   function truncate(string, n) {
     return string?.length > n ? string.substr(0, n - 1) + "..." : string;
   }
+
   return (
     <div>
       <div
@@ -54,26 +78,49 @@ const DetailPage = () => {
             </div>
             <div className="genres">
               {genres.map((genre) => (
-                <div>{genre.name}</div>
+                <div key={uuid()}>{genre.name}</div>
               ))}
             </div>
-            <div className="descrip">{truncate(detail.overview, 250)}</div>
+            <div className="descrip">{truncate(detail.overview, 220)}</div>
             <div className="btns">
-              <button className="watch">
-                <FaPlay /> PLAY
-              </button>
+              <a
+                href={`https://www.youtube.com/watch?v=${trailer}`}
+                target="_blank"
+              >
+                <button className="watch">
+                  <FaPlay /> PLAY
+                </button>
+              </a>
             </div>
           </div>
         </div>
         <div className="fadeBottom"></div>
       </div>
       <div className="wrapperIn">
-        <h2>Casts</h2>
-        <Slider {...settings}>
-          <div>Hello</div>
-          <div>Hello</div>
-          <div>Hello</div>
-          <div>Hello</div>
+        <h2>CAST</h2>
+        <Slider {...settingsTwo}>
+          {casts.map((cast) => (
+            <div key={uuid()} className="cast">
+              <div>
+                {cast.profile_path ? (
+                  <img
+                    src={`https://image.tmdb.org/t/p/original${cast.profile_path}`}
+                    alt="profile"
+                  />
+                ) : (
+                  <img
+                    className="noImage"
+                    src="https://www.irits.org/wp-content/uploads/2021/09/Neutral-Silhouette.jpg"
+                  />
+                )}
+              </div>
+              <div className="about">
+                <div className="oName">{cast.name}</div>
+                <div>As</div>
+                <div className="character">{cast.character}</div>
+              </div>
+            </div>
+          ))}
         </Slider>
       </div>
     </div>

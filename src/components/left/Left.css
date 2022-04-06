@@ -1,6 +1,6 @@
 .left {
   flex: 1;
-  padding: 1.5rem;
+  padding: 1.5rem 1rem;
   border-right: 1px solid rgb(48, 47, 47);
 }
 .logo {

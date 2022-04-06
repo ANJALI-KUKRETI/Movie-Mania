@@ -6,9 +6,9 @@ import { Link } from "react-router-dom";
 
 const Card = ({ mov, setFav }) => {
   function setAsFavorite() {
-    // console.log(mov.id);
     setFav(mov);
   }
+  console.log(mov);
   return (
     <div className="card">
       <Link to={`/detailPage/${mov.id}`}>
