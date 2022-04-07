@@ -1,17 +1,29 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { BsPlusLg } from "react-icons/bs";
 import { AiFillStar } from "react-icons/ai";
 import "./Row.css";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
-const Card = ({ mov, setFav }) => {
+const Card = ({ mov, setFav, type }) => {
+  // const [type, setType] = useState("movie");
   function setAsFavorite() {
-    setFav(mov);
+    // setFav(mov);
+    setFav({
+      mov,
+      type,
+    });
   }
-  console.log(mov);
+
+  // useEffect(() => {
+  //   if (window.location.pathname.split("/").includes("tv")) {
+  //     setType("tv");
+  //     console.log(type);
+  //   }
+  // }, [type]);
+
   return (
     <div className="card">
-      <Link to={`/detailPage/${mov.id}`}>
+      <Link to={`/detailPage/${mov.id}/${type}`}>
         <img
           src={`https://image.tmdb.org/t/p/original/${mov.poster_path}`}
           alt="demo"

@@ -1,11 +1,16 @@
 .category {
-  margin: 3rem 1.3rem;
+  margin: 2rem 1.3rem;
 }
 .cardHolder {
+  margin-top: 1rem;
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
 .inn {
   width: 29%;
+}
+.loadMore {
+  display: flex;
+  justify-content: space-between;
 }

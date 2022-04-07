@@ -3,8 +3,10 @@ import { NavLink } from "react-router-dom";
 import Banner from "../components/middle/Banner";
 import Row from "../components/middle/Row";
 import "../components/middle/Middle.css";
+import Spinner from "../components/Spinner/Spinner";
 
-const HomePage = ({ top, trending, banner, setFav }) => {
+const HomePage = ({ top, trending, banner, setFav, type, loading }) => {
+  console.log(type);
   return (
     <div style={{ padding: "2.3rem 1.5rem" }}>
       <div className="header">
@@ -26,9 +28,20 @@ const HomePage = ({ top, trending, banner, setFav }) => {
           </NavLink>
         </div>
       </div>
-      <Banner banner={banner} setFav={setFav} />
-      <Row heading={"Trending Now"} data={trending} setFav={setFav} />
-      <Row heading={"Top Rated"} data={top} setFav={setFav} />
+      {loading ? (
+        <Spinner />
+      ) : (
+        <>
+          <Banner banner={banner} setFav={setFav} />
+          <Row
+            heading={"Trending Now"}
+            data={trending}
+            setFav={setFav}
+            type={type}
+          />
+          <Row heading={"Top Rated"} data={top} setFav={setFav} type={type} />
+        </>
+      )}
     </div>
   );
 };

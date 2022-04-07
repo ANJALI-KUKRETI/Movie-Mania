@@ -45,7 +45,8 @@
   object-fit: contain;
   background-repeat: no-repeat;
   margin-top: 3rem;
-  border-radius: 5px;
+  border-radius: 20px;
+  height: 60vh;
 }
 
 .content {

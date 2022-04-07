@@ -7,6 +7,7 @@ import "./Row.css";
 import Card from "./Card";
 
 const Row = ({ heading, data, setFav, type }) => {
+  console.log(data);
   return (
     <div className="row">
       <div className="heading">{heading}</div>
@@ -14,7 +15,7 @@ const Row = ({ heading, data, setFav, type }) => {
       <div className="wrapper">
         <Slider {...settings}>
           {data.map((mov) => (
-            <Card mov={mov} key={uuid()} setFav={setFav} />
+            <Card mov={mov} key={uuid()} setFav={setFav} type={type} />
           ))}
         </Slider>
       </div>

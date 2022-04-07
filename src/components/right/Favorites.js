@@ -4,15 +4,15 @@ import { Link } from "react-router-dom";
 import { IoIosRemoveCircleOutline } from "react-icons/io";
 import "./favorites.css";
 
-const Favorites = ({ wishlist, removeWish }) => {
-  console.log(wishlist);
+const Favorites = ({ wishlist, removeWish, type }) => {
+  console.log(type);
   return (
     <div className="favorites">
       <h2>My WishList</h2>
       <div className="favorites-wrapper">
         {wishlist.map((wish) => (
           <div className="fav-card" key={uuid()}>
-            <Link to={`/detailPage/${wish.id}`}>
+            <Link to={`/detailPage/${wish.id}/${type}`}>
               <img
                 src={`https://image.tmdb.org/t/p/original/${wish.poster_path}`}
                 alt="side"

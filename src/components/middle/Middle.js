@@ -14,29 +14,38 @@ const Middle = ({ setFav }) => {
   const [topShow, setTopShow] = useState([]);
   const [bannerMovie, setBannerMovie] = useState([]);
   const [bannerShow, setBannerShow] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     async function temp() {
       async function getTrending() {
+        setLoading(true);
         const res = await axios.get(requests.fetchTrendingMovie);
         setTrendingMovie(res.data.results);
+        setLoading(false);
         return res.data.results;
       }
       getTrending();
       async function getTop() {
+        setLoading(true);
         const res = await axios.get(requests.fetchTopRatedMovie);
         setTopMovie(res.data.results);
+        setLoading(false);
       }
       getTop();
       async function getTrendingShow() {
+        setLoading(true);
         const res = await axios.get(requests.fetchTrendingShow);
         setTrendingShow(res.data.results);
+        setLoading(false);
         return res.data.results;
       }
       getTrendingShow();
       async function getTopShow() {
+        setLoading(true);
         const res = await axios.get(requests.fetchTopRatedShow);
         setTopShow(res.data.results);
+        setLoading(false);
       }
       getTopShow();
 
@@ -64,6 +73,8 @@ const Middle = ({ setFav }) => {
               top={topMovie}
               banner={bannerMovie}
               setFav={setFav}
+              type="movie"
+              loading={loading}
             />
           }
         />
@@ -75,12 +86,17 @@ const Middle = ({ setFav }) => {
               top={topShow}
               banner={bannerShow}
               setFav={setFav}
+              type="tv"
+              loading={loading}
             />
           }
         />
-        <Route path="/:category" element={<CategoryPage setFav={setFav} />} />
         <Route
-          path="/detailPage/:id"
+          path="/:category/:type"
+          element={<CategoryPage setFav={setFav} />}
+        />
+        <Route
+          path="/detailPage/:id/:type"
           element={<DetailPage setFav={setFav} />}
         />
       </Routes>

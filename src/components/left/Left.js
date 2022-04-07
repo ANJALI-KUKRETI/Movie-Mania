@@ -9,14 +9,14 @@ const Left = () => {
   const catArr = [
     "Action",
     "Comedy",
-    "Romance",
     "Drama",
-    "Horror",
     "Family",
-    "Thriller",
+    "War",
     "Documentary",
     "Crime",
-    "Fantasy",
+    "Mystery",
+    "Animation",
+    "Western",
   ];
   return (
     <div className="left">
@@ -36,7 +36,7 @@ const Left = () => {
         {catArr.map((cat) => (
           <div key={uuid()}>
             <NavLink
-              to={`/${cat}`}
+              to={`/${cat}/movie`}
               className={(navdata) => (navdata.isActive ? "activeL" : "link")}
             >
               {cat}
