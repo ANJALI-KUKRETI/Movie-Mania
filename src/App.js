@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+
 import "./App.css";
 import Left from "./components/left/Left";
 import Middle from "./components/middle/Middle";
@@ -9,6 +10,7 @@ function App() {
   const [wishlist, setWishlist] = useState(
     JSON.parse(localStorage.getItem("wishlist")) || []
   );
+  const [searchText, setSearchText] = useState("");
 
   const saveToLocalStorage = (items) => {
     localStorage.setItem("wishlist", JSON.stringify(items));
@@ -28,11 +30,20 @@ function App() {
     setWishlist(temp);
     saveToLocalStorage(temp);
   };
+  function getSearchHandler(text) {
+    setSearchText(text);
+    console.log(searchText);
+  }
   return (
     <div className="App">
       <Left />
-      <Middle setFav={setFav} />
-      <Right wishlist={wishlist} removeWish={removeWishHandler} type={type} />
+      <Middle setFav={setFav} searchText={searchText} />
+      <Right
+        wishlist={wishlist}
+        removeWish={removeWishHandler}
+        type={type}
+        getSearch={getSearchHandler}
+      />
     </div>
   );
 }

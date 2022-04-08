@@ -6,8 +6,9 @@ import HomePage from "../../pages/HomePage";
 import "./Middle.css";
 import CategoryPage from "../../pages/CategoryPage";
 import DetailPage from "../../pages/DetailPage";
+import SearchPage from "../../pages/SearchPage";
 
-const Middle = ({ setFav }) => {
+const Middle = ({ setFav, searchText }) => {
   const [trendingMovie, setTrendingMovie] = useState([]);
   const [topMovie, setTopMovie] = useState([]);
   const [trendingShow, setTrendingShow] = useState([]);
@@ -98,6 +99,10 @@ const Middle = ({ setFav }) => {
         <Route
           path="/detailPage/:id/:type"
           element={<DetailPage setFav={setFav} />}
+        />
+        <Route
+          path="/searchPage/:type"
+          element={<SearchPage searchText={searchText} setFav={setFav} />}
         />
       </Routes>
     </div>

@@ -5,29 +5,24 @@ import "./Row.css";
 import { Link, useParams } from "react-router-dom";
 
 const Card = ({ mov, setFav, type }) => {
-  // const [type, setType] = useState("movie");
   function setAsFavorite() {
-    // setFav(mov);
     setFav({
       mov,
       type,
     });
   }
 
-  // useEffect(() => {
-  //   if (window.location.pathname.split("/").includes("tv")) {
-  //     setType("tv");
-  //     console.log(type);
-  //   }
-  // }, [type]);
-
   return (
     <div className="card">
       <Link to={`/detailPage/${mov.id}/${type}`}>
-        <img
-          src={`https://image.tmdb.org/t/p/original/${mov.poster_path}`}
-          alt="demo"
-        />
+        {mov.poster_path ? (
+          <img
+            src={`https://image.tmdb.org/t/p/original/${mov.poster_path}`}
+            alt="demo"
+          />
+        ) : (
+          <img src=" https://user-images.githubusercontent.com/24848110/33519396-7e56363c-d79d-11e7-969b-09782f5ccbab.png" />
+        )}
       </Link>
       <div className="card-content">
         <div className="plus" onClick={setAsFavorite}>

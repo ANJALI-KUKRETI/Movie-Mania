@@ -5,7 +5,7 @@ import Favorites from "./Favorites";
 import "./Right.css";
 import InputArea from "./InputAres";
 
-const Right = ({ wishlist, removeWish, type }) => {
+const Right = ({ wishlist, removeWish, type, getSearch }) => {
   // useEffect(() => {
   //   fetchSearch();
   // }, [searchText]);
@@ -13,7 +13,7 @@ const Right = ({ wishlist, removeWish, type }) => {
 
   return (
     <div className="right">
-      <InputArea />
+      <InputArea getSearch={getSearch} />
       <Favorites wishlist={wishlist} removeWish={removeWish} type={type} />
     </div>
   );
