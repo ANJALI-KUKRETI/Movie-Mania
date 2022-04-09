@@ -16,17 +16,18 @@ function App() {
     localStorage.setItem("wishlist", JSON.stringify(items));
   };
   function setFav({ mov, type }) {
-    console.log(mov, type);
+    console.log(mov);
     const alreadyWishlisted = wishlist.find((wish) => wish.id === mov.id);
     if (alreadyWishlisted) return;
-    const temp = [mov, ...wishlist];
+    const temp = [{ mov, type }, ...wishlist];
     setWishlist(temp);
     saveToLocalStorage(temp);
     setType(type);
   }
+  console.log(wishlist);
 
   const removeWishHandler = (id) => {
-    const temp = wishlist.filter((tmp) => tmp.id !== id);
+    const temp = wishlist.filter((tmp) => tmp.mov.id !== id);
     setWishlist(temp);
     saveToLocalStorage(temp);
   };

@@ -9,9 +9,6 @@ const InputArea = ({ getSearch }) => {
     e.preventDefault();
     getSearch(searchText);
   };
-  function passSearchValue(text) {
-    setSearchText(text);
-  }
 
   return (
     <div className="searchBar">
@@ -22,7 +19,7 @@ const InputArea = ({ getSearch }) => {
             className="seacrh"
             placeholder="Search"
             // value={searchText}
-            onChange={(e) => passSearchValue(e.target.value)}
+            onChange={(e) => setSearchText(e.target.value)}
           />
         </Link>
       </form>

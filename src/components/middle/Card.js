@@ -5,6 +5,7 @@ import "./Row.css";
 import { Link, useParams } from "react-router-dom";
 
 const Card = ({ mov, setFav, type }) => {
+  // console.log(setFav);
   function setAsFavorite() {
     setFav({
       mov,

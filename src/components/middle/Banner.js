@@ -57,7 +57,10 @@ const Banner = ({ banner, setFav }) => {
                 <FaPlay /> <span> PLAY</span>
               </a>
             </button>
-            <button className="add" onClick={() => setFav(banner)}>
+            <button
+              className="add"
+              onClick={() => setFav({ banner: banner, type: type })}
+            >
               <BsPlusLg /> <span> MY LIST</span>
             </button>
           </div>

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import uuid from "react-uuid";
+
 import Card from "../components/middle/Card";
 import "./CategoryPage.css";
 import axios from "../components/axios/axios";
@@ -9,6 +10,7 @@ import Spinner from "../components/Spinner/Spinner";
 
 const CategoryPage = ({ setFav }) => {
   const [page, setPage] = useState(1);
+  const [totalPage, setTotalPage] = useState(0);
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const params = useParams();
@@ -33,7 +35,8 @@ const CategoryPage = ({ setFav }) => {
         const res = await axios.get(
           `/discover/${type}?api_key=4a0eac3b6692e4c56952182a8412654a&with_genres=${genreId.id}&page=${page}`
         );
-        console.log(res.data.results);
+        console.log(res.data.total_pages);
+        setTotalPage(res.data.total_pages);
         setData(res.data.results);
         setLoading(false);
       }
@@ -41,6 +44,8 @@ const CategoryPage = ({ setFav }) => {
     }
     outer();
   }, [cName, page, type]);
+
+  console.log(totalPage);
 
   console.log(page);
   return (
@@ -76,8 +81,20 @@ const CategoryPage = ({ setFav }) => {
             ))}
           </div>
           <div className="loadMore">
-            <button onClick={() => setPage(page - 1)}>Prev</button>
-            <button onClick={() => setPage(page + 1)}>Next</button>
+            <div>
+              {page > 1 && (
+                <div className="btn" onClick={() => setPage(page - 1)}>
+                  <div className="btnIn">Prev {page - 1}</div>
+                </div>
+              )}
+            </div>
+            <div>
+              {page < totalPage && (
+                <div className="btn" onClick={() => setPage(page + 1)}>
+                  <div className="btnIn">Next {page + 1}</div>
+                </div>
+              )}
+            </div>
           </div>
         </>
       )}

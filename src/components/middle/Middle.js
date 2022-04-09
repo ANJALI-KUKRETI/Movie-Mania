@@ -93,13 +93,14 @@ const Middle = ({ setFav, searchText }) => {
           }
         />
         <Route
-          path="/:category/:type"
-          element={<CategoryPage setFav={setFav} />}
-        />
-        <Route
           path="/detailPage/:id/:type"
           element={<DetailPage setFav={setFav} />}
         />
+        <Route
+          path="/:category/:type"
+          element={<CategoryPage setFav={setFav} />}
+        />
+
         <Route
           path="/searchPage/:type"
           element={<SearchPage searchText={searchText} setFav={setFav} />}

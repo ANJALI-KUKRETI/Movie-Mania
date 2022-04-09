@@ -11,6 +11,18 @@
   width: 29%;
 }
 .loadMore {
+  margin-top: 1.5rem;
   display: flex;
   justify-content: space-between;
+}
+.btnIn {
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 18px;
+  background-color: rgb(40, 39, 39);
+  font-weight: bold;
+  border-radius: 5px;
+}
+.btn {
+  position: relative;
 }

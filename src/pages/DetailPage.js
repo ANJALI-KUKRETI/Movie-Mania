@@ -10,6 +10,7 @@ import "./DetailPage.css";
 import Spinner from "../components/Spinner/Spinner";
 
 const DetailPage = ({ setFav }) => {
+  console.log(setFav);
   const [detail, setDetail] = useState({});
   const [genres, setGenres] = useState([]);
   const [casts, setCasts] = useState([]);
@@ -18,7 +19,7 @@ const DetailPage = ({ setFav }) => {
   const params = useParams();
   const dataId = params.id;
   const type = params.type;
-  console.log(type);
+  // console.log(detail);
   useEffect(() => {
     async function getData() {
       setLoading(true);
@@ -45,7 +46,7 @@ const DetailPage = ({ setFav }) => {
       const request = await axios.get(
         `/${type}/${dataId}/videos?api_key=4a0eac3b6692e4c56952182a8412654a`
       );
-      // console.log(request);
+      console.log(request);
       // console.log(request.data);
       setTrailer(
         request.data.results.filter(
@@ -61,6 +62,15 @@ const DetailPage = ({ setFav }) => {
     return string?.length > n ? string.substr(0, n - 1) + "..." : string;
   }
 
+  // console.log(detail, type);
+  // function setAsFav() {
+  //   e.preventDefault();
+  //   console.log(detail, type);
+  //   setFav({
+  //     detail,
+  //     type,
+  //   });
+  // }
   return (
     <div>
       {loading ? (
