@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FaPlay } from "react-icons/fa";
-import { BsPlusLg } from "react-icons/bs";
+// import { BsPlusLg } from "react-icons/bs";
 import axios from "../axios/axios";
 import { AiFillStar } from "react-icons/ai";
 import "./Middle.css";
