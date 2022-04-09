@@ -1,5 +1,3 @@
-import React, { useState, useEffect, useCallback } from "react";
-
 import Favorites from "./Favorites";
 
 import "./Right.css";

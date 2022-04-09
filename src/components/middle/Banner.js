@@ -21,7 +21,7 @@ const Banner = ({ banner, setFav }) => {
     }
     getVideo();
     return movieTrailer;
-  }, [banner.id, movieTrailer]);
+  }, [banner.id, movieTrailer, type]);
 
   function truncate(string, n) {
     return string?.length > n ? string.substr(0, n - 1) + "..." : string;
@@ -51,6 +51,7 @@ const Banner = ({ banner, setFav }) => {
               <a
                 href={`https://www.youtube.com/watch?v=${movieTrailer}`}
                 target="_blank"
+                rel="noreferrer"
               >
                 <FaPlay /> <span> PLAY</span>
               </a>

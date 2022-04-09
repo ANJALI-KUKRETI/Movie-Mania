@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { BsPlusLg } from "react-icons/bs";
 import { AiFillStar } from "react-icons/ai";
 import "./Row.css";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Card = ({ mov, setFav, type, wishlist }) => {
   const [red, setRed] = useState(false);
@@ -30,7 +30,7 @@ const Card = ({ mov, setFav, type, wishlist }) => {
             alt="demo"
           />
         ) : (
-          <img src=" https://user-images.githubusercontent.com/24848110/33519396-7e56363c-d79d-11e7-969b-09782f5ccbab.png" />
+          <img src=" https://user-images.githubusercontent.com/24848110/33519396-7e56363c-d79d-11e7-969b-09782f5ccbab.png" alt="notFound"/>
         )}
       </Link>
       <div className="card-content">

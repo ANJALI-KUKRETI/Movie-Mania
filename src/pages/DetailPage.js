@@ -53,7 +53,7 @@ const DetailPage = ({ setFav }) => {
       setLoading(false);
     }
     getTrailer();
-  }, [dataId]);
+  }, [dataId, type]);
 
   function truncate(string, n) {
     return string?.length > n ? string.substr(0, n - 1) + "..." : string;
@@ -98,6 +98,7 @@ const DetailPage = ({ setFav }) => {
                   <a
                     href={`https://www.youtube.com/watch?v=${trailer}`}
                     target="_blank"
+                    rel="noreferrer"
                   >
                     <button className="watch">
                       <FaPlay /> PLAY
@@ -129,6 +130,7 @@ const DetailPage = ({ setFav }) => {
                       <img
                         className="noImage"
                         src="https://www.irits.org/wp-content/uploads/2021/09/Neutral-Silhouette.jpg"
+                        alt="noImage"
                       />
                     )}
                   </div>

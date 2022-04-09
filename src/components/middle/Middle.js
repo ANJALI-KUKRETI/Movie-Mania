@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Routes, Route, NavLink } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import axios from "../axios/axios";
 import requests from "../axios/Requests";
 import HomePage from "../../pages/HomePage";
