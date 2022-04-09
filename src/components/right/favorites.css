@@ -1,3 +1,25 @@
+.head {
+  display: flex;
+  align-items: center;
+}
+.icon {
+  font-size: 1.8rem;
+  margin-left: 10px;
+  margin-bottom: 14px;
+  color: rgb(167, 5, 5);
+  position: relative;
+}
+.num {
+  position: absolute;
+  top: 0px;
+  left: 22px;
+  padding: 1px 5px;
+  border-radius: 50%;
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  font-size: 0.7rem;
+}
 .favorites {
   width: 90%;
   overflow-y: scroll;

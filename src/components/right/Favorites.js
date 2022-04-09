@@ -1,15 +1,20 @@
 import React from "react";
 import uuid from "react-uuid";
 import { Link } from "react-router-dom";
+import { BsFillHeartFill } from "react-icons/bs";
 import { IoIosRemoveCircleOutline } from "react-icons/io";
 import "./favorites.css";
 
 const Favorites = ({ wishlist, removeWish, type }) => {
-  console.log(wishlist);
-  console.log(type);
   return (
     <div className="favorites">
-      <h2>My WishList</h2>
+      <div className="head">
+        <h2>My WishList</h2>
+        <div className="icon">
+          <BsFillHeartFill />
+          <div className="num">{wishlist.length}</div>
+        </div>
+      </div>
       <div className="favorites-wrapper">
         {wishlist.map((wish) => (
           <div className="fav-card" key={uuid()}>

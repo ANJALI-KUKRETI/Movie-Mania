@@ -9,28 +9,31 @@ import Spinner from "../components/Spinner/Spinner";
 import axios from "../components/axios/axios";
 import "./SearchPage.css";
 
-const SearchPage = ({ searchText, setFav }) => {
+const SearchPage = ({ searchText, setFav, wishlist }) => {
   const [content, setContent] = useState([]);
   const [loading, setLoading] = useState(false);
-  console.log(searchText);
+  const [page, setPage] = useState(1);
+  const [totalPage, setTotalPage] = useState(0);
+
   const params = useParams();
-  console.log(params);
+
   useEffect(() => {
     async function getData() {
       try {
         setLoading(true);
         const { data } = await axios.get(
-          `https://api.themoviedb.org/3/search/${params.type}?api_key=${API_KEY}&language=en-US&query=${searchText}&page=1&include_adult=false`
+          `https://api.themoviedb.org/3/search/${params.type}?api_key=${API_KEY}&language=en-US&query=${searchText}&page=${page}&include_adult=false`
         );
         setContent(data.results);
         setLoading(false);
+        setTotalPage(data.total_pages);
       } catch (error) {
         console.error(error);
       }
     }
     getData();
-  }, [searchText, params.type]);
-  console.log(content);
+  }, [searchText, params.type, page]);
+
   return (
     <div className="searchPage">
       <div className="header">
@@ -65,6 +68,7 @@ const SearchPage = ({ searchText, setFav }) => {
                     key={uuid()}
                     setFav={setFav}
                     type={params.type}
+                    wishlist={wishlist}
                   />
                 </div>
               ))
@@ -78,6 +82,22 @@ const SearchPage = ({ searchText, setFav }) => {
             )}
           </div>
         )}
+        <div className="loadMore">
+          <div>
+            {page > 1 && (
+              <div className="btn" onClick={() => setPage(page - 1)}>
+                <div className="btnIn">Prev {page - 1}</div>
+              </div>
+            )}
+          </div>
+          <div>
+            {page <= totalPage && (
+              <div className="btn" onClick={() => setPage(page + 1)}>
+                <div className="btnIn">Next {page + 1}</div>
+              </div>
+            )}
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -8,7 +8,7 @@ import CategoryPage from "../../pages/CategoryPage";
 import DetailPage from "../../pages/DetailPage";
 import SearchPage from "../../pages/SearchPage";
 
-const Middle = ({ setFav, searchText }) => {
+const Middle = ({ setFav, searchText, wishlist }) => {
   const [trendingMovie, setTrendingMovie] = useState([]);
   const [topMovie, setTopMovie] = useState([]);
   const [trendingShow, setTrendingShow] = useState([]);
@@ -76,6 +76,7 @@ const Middle = ({ setFav, searchText }) => {
               setFav={setFav}
               type="movie"
               loading={loading}
+              wishlist={wishlist}
             />
           }
         />
@@ -89,6 +90,7 @@ const Middle = ({ setFav, searchText }) => {
               setFav={setFav}
               type="tv"
               loading={loading}
+              wishlist={wishlist}
             />
           }
         />
@@ -98,12 +100,18 @@ const Middle = ({ setFav, searchText }) => {
         />
         <Route
           path="/:category/:type"
-          element={<CategoryPage setFav={setFav} />}
+          element={<CategoryPage setFav={setFav} wishlist={wishlist} />}
         />
 
         <Route
           path="/searchPage/:type"
-          element={<SearchPage searchText={searchText} setFav={setFav} />}
+          element={
+            <SearchPage
+              searchText={searchText}
+              setFav={setFav}
+              wishlist={wishlist}
+            />
+          }
         />
       </Routes>
     </div>

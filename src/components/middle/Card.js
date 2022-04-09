@@ -4,8 +4,16 @@ import { AiFillStar } from "react-icons/ai";
 import "./Row.css";
 import { Link, useParams } from "react-router-dom";
 
-const Card = ({ mov, setFav, type }) => {
-  // console.log(setFav);
+const Card = ({ mov, setFav, type, wishlist }) => {
+  const [red, setRed] = useState(false);
+  useEffect(() => {
+    // if (!wishlist) return;
+    if (wishlist.find((wish) => wish.mov.id === mov.id)) {
+      setRed(true);
+    } else {
+      setRed(false);
+    }
+  }, [wishlist, mov.id]);
   function setAsFavorite() {
     setFav({
       mov,
@@ -26,7 +34,7 @@ const Card = ({ mov, setFav, type }) => {
         )}
       </Link>
       <div className="card-content">
-        <div className="plus" onClick={setAsFavorite}>
+        <div className={red ? "newPlus" : "plus"} onClick={setAsFavorite}>
           <BsPlusLg />
         </div>
         <div className="info">

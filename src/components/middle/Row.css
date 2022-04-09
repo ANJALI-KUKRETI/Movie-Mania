@@ -45,3 +45,15 @@
   justify-content: center;
   align-items: center;
 }
+.newPlus {
+  position: absolute;
+  top: 0.8rem;
+  right: 0.8rem;
+  cursor: pointer;
+  padding: 6px 9px;
+  border-radius: 5px;
+  font-size: 22px;
+  background-color: rgb(167, 5, 5);
+  color: white;
+  cursor: default;
+}

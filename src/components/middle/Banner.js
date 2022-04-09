@@ -8,18 +8,16 @@ import "./Middle.css";
 const Banner = ({ banner, setFav }) => {
   const [movieTrailer, setMovieTrailer] = useState([]);
   const type = banner.media_type;
-  // console.log(type);
   useEffect(() => {
     async function getVideo() {
       const request = await axios.get(
         `/${type}/${banner.id}/videos?api_key=4a0eac3b6692e4c56952182a8412654a`
       );
-      // console.log(request);
+
       setMovieTrailer(
         request.data.results.filter((mov) => mov.name === "Official Trailer")[0]
           .key
       );
-      // console.log(movieTrailer);
     }
     getVideo();
     return movieTrailer;

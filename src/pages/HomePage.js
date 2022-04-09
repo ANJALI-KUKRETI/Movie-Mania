@@ -5,8 +5,15 @@ import Row from "../components/middle/Row";
 import "../components/middle/Middle.css";
 import Spinner from "../components/Spinner/Spinner";
 
-const HomePage = ({ top, trending, banner, setFav, type, loading }) => {
-  console.log(type);
+const HomePage = ({
+  top,
+  trending,
+  banner,
+  setFav,
+  type,
+  loading,
+  wishlist,
+}) => {
   return (
     <div style={{ padding: "2.3rem 1.5rem" }}>
       <div className="header">
@@ -38,8 +45,15 @@ const HomePage = ({ top, trending, banner, setFav, type, loading }) => {
             data={trending}
             setFav={setFav}
             type={type}
+            wishlist={wishlist}
           />
-          <Row heading={"Top Rated"} data={top} setFav={setFav} type={type} />
+          <Row
+            heading={"Top Rated"}
+            data={top}
+            setFav={setFav}
+            type={type}
+            wishlist={wishlist}
+          />
         </>
       )}
     </div>

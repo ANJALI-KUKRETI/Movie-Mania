@@ -17,14 +17,13 @@ function App() {
   };
   function setFav({ mov, type }) {
     console.log(mov);
-    const alreadyWishlisted = wishlist.find((wish) => wish.id === mov.id);
+    const alreadyWishlisted = wishlist.find((wish) => wish.mov.id === mov.id);
     if (alreadyWishlisted) return;
     const temp = [{ mov, type }, ...wishlist];
     setWishlist(temp);
     saveToLocalStorage(temp);
     setType(type);
   }
-  console.log(wishlist);
 
   const removeWishHandler = (id) => {
     const temp = wishlist.filter((tmp) => tmp.mov.id !== id);
@@ -33,12 +32,11 @@ function App() {
   };
   function getSearchHandler(text) {
     setSearchText(text);
-    console.log(searchText);
   }
   return (
     <div className="App">
       <Left />
-      <Middle setFav={setFav} searchText={searchText} />
+      <Middle setFav={setFav} searchText={searchText} wishlist={wishlist} />
       <Right
         wishlist={wishlist}
         removeWish={removeWishHandler}

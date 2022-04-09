@@ -6,11 +6,6 @@ import "./Right.css";
 import InputArea from "./InputAres";
 
 const Right = ({ wishlist, removeWish, type, getSearch }) => {
-  // useEffect(() => {
-  //   fetchSearch();
-  // }, [searchText]);
-  console.log(type);
-
   return (
     <div className="right">
       <InputArea getSearch={getSearch} />
