@@ -183,7 +183,7 @@
     margin-top: 1.5rem;
   }
   .content {
-    padding: 5rem 1rem;
+    /* padding: 5rem 1rem; */
   }
 }
 @media (max-width: 500px) {

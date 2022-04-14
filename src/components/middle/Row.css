@@ -81,7 +81,10 @@
 @media (max-width: 500px) {
   .card {
     border: 10px solid rgb(17, 17, 17);
-    height: 19.5rem;
+    height: 14.5rem;
+  }
+  .card img {
+    height: 10rem;
   }
   .heading {
     font-size: 1.1rem;
@@ -96,7 +99,10 @@
 }
 @media (max-width: 400px) {
   .card {
-    border: 23px solid rgb(17, 17, 17);
-    height: 20.5rem;
+    border: 6px solid rgb(17, 17, 17);
+    height: 15rem;
+  }
+  .card img {
+    height: 10rem;
   }
 }
