@@ -135,8 +135,6 @@ const DetailPage = ({ setFav }) => {
                   </div>
                   <div className="about">
                     <div className="oName">{cast.name}</div>
-                    <div>As</div>
-                    <div className="character">{cast.character}</div>
                   </div>
                 </div>
               ))}

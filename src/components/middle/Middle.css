@@ -1,5 +1,5 @@
 .middle {
-  flex: 4;
+  flex: 3;
   border-right: 1px solid rgb(48, 47, 47);
   overflow-y: scroll;
   display: flex;
@@ -38,18 +38,18 @@
   font-size: 1.3rem;
 }
 .banner {
-  /* position: relative; */
+  position: relative;
   object-fit: contain;
   background-repeat: no-repeat;
   margin-top: 3rem;
   border-radius: 20px;
-  height: 60vh;
+  height: 26rem;
 }
 
 .content {
   padding: 2rem;
   /* position: absolute; */
-  width: 50%;
+  width: 60%;
   bottom: 0;
 }
 .content div {
@@ -155,7 +155,7 @@
 
 @media (max-width: 1250px) {
   .content {
-    width: 64%;
+    width: 68%;
   }
 }
 @media (max-width: 1150px) {
@@ -168,6 +168,9 @@
   .description {
     font-size: 13px;
   }
+  .banner {
+    height: 21rem;
+  }
 }
 @media (max-width: 1000px) {
   .middle {
@@ -176,32 +179,36 @@
   .hamburger {
     display: block;
   }
-  .homepage {
-    margin-top: -3rem;
-  }
   .banner {
     margin-top: 1.5rem;
   }
-  .content {
-    /* padding: 5rem 1rem; */
-  }
 }
 @media (max-width: 500px) {
+  .banner {
+    height: 20rem;
+  }
   .res {
     width: 70%;
   }
   .content {
-    width: 90%;
+    width: 100%;
   }
   .hamburger {
     font-size: 1.5rem;
     z-index: 2222;
   }
   .header {
+    /* margin-top: 3rem; */
     font-size: 1.1rem;
   }
   .btns button {
     padding: 3px 9px;
     font-size: 1rem;
+  }
+  .close {
+    font-size: 1rem;
+  }
+  .name {
+    font-size: 1.6rem;
   }
 }

@@ -34,7 +34,7 @@
 
 .card-content .info {
   text-align: center;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -64,7 +64,7 @@
     font-size: 1.2rem;
   }
   .card {
-    height: 21.5rem;
+    height: 19rem;
     position: relative;
     border: 8px solid rgb(17, 17, 17);
     background-color: rgb(40, 39, 39);
@@ -72,16 +72,31 @@
   .card img {
     height: 14rem;
   }
+  .row .card img {
+    height: 12rem;
+  }
+  .row .card {
+    height: 17rem;
+  }
+  .card-content .info {
+    font-size: 0.75rem;
+  }
 }
 @media (max-width: 1000px) {
   .card {
     border: 22px solid rgb(17, 17, 17);
   }
+  .row .card {
+    height: 18rem;
+  }
 }
 @media (max-width: 500px) {
-  .card {
-    border: 10px solid rgb(17, 17, 17);
+  .row .card {
+    border: 6px solid rgb(17, 17, 17);
     height: 14.5rem;
+  }
+  .card {
+    height: 15.5rem;
   }
   .card img {
     height: 10rem;
@@ -95,6 +110,7 @@
   }
   .card-content .info {
     font-size: 0.8rem;
+    margin-top: 0;
   }
 }
 @media (max-width: 400px) {
@@ -102,7 +118,7 @@
     border: 6px solid rgb(17, 17, 17);
     height: 15rem;
   }
-  .card img {
+  .row .card img {
     height: 10rem;
   }
 }

@@ -83,6 +83,7 @@
   width: 6.5rem;
 }
 .about {
+  margin-top: 7px;
   font-size: 0.8rem;
   text-align: center;
   color: rgb(183, 181, 181);
@@ -95,7 +96,7 @@
 
 @media (max-width: 1350px) {
   .layout {
-    padding: 4rem 1rem;
+    padding: 4rem 0.5rem;
   }
 }
 @media (max-width: 1200px) {
@@ -121,13 +122,14 @@
 }
 @media (max-width: 500px) {
   .detailPage {
-    height: 54vh;
+    height: 57vh;
   }
   .image img {
     height: 13rem;
     width: 8rem;
   }
   .detailsIn {
+    width: 55vw;
     margin-left: 1rem;
   }
   .title {
@@ -144,5 +146,9 @@
   }
   .cast img {
     height: 6rem;
+  }
+  .genres {
+    display: flex;
+    flex-wrap: wrap;
   }
 }

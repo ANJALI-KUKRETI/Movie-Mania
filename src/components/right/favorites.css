@@ -79,6 +79,11 @@
   color: white;
 }
 
+@media (max-width: 1250px) {
+  .details {
+    font-size: 0.7rem;
+  }
+}
 @media (max-width: 1000px) {
   .favorites {
     overflow-y: visible;
@@ -91,5 +96,12 @@
   .num {
     font-size: 0.5rem;
     padding: 1px 4px;
+  }
+  .fav-card img {
+    height: 3.5rem;
+    width: 3rem;
+  }
+  .details {
+    font-size: 0.6rem;
   }
 }

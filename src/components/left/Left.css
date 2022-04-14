@@ -90,11 +90,10 @@
   .favR {
     padding: 1rem;
     position: absolute;
-    top: 4.5rem;
+    top: 3.5rem;
     z-index: 222;
-    /* width: 50vw; */
     margin-right: 2rem;
-    max-height: 90vh;
+    max-height: 85vh;
     overflow-y: scroll;
     right: 0;
     background-color: rgb(60, 59, 59);

@@ -32,22 +32,38 @@
     margin-right: 10px;
   }
   .searchBar input {
-    width: 11rem;
+    width: 10rem;
   }
 }
 @media (max-width: 1000px) {
   .right {
     display: none;
   }
+  .searchBar input {
+    margin-top: 0.5rem;
+    padding: 6px;
+  }
 }
 @media (max-width: 500px) {
   .searchBar {
     margin-bottom: 0.5rem;
   }
-  .searchBar input {
+  /* .searchBar input {
     padding: 2px 7px;
     width: 8rem;
     margin-right: -5px;
     margin-top: 5px;
+  } */
+  .searchBar input {
+    padding: 5px 7px;
+    width: 8rem;
+    top: 4rem;
+    left: 36px;
+    margin: auto;
+    width: 79%;
+    position: absolute;
+  }
+  .head h2 {
+    font-size: 1rem;
   }
 }
