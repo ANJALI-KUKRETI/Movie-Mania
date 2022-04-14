@@ -148,6 +148,7 @@
   right: 20px;
   top: 25px;
   font-size: 1.5rem;
+  z-index: 2222;
   cursor: pointer;
   z-index: 333;
 }
@@ -194,6 +195,7 @@
   }
   .hamburger {
     font-size: 1.5rem;
+    z-index: 2222;
   }
   .header {
     font-size: 1.1rem;

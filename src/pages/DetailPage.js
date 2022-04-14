@@ -71,7 +71,6 @@ const DetailPage = ({ setFav }) => {
               backgroundSize: "cover",
               backgroundImage: `url("https://image.tmdb.org/t/p/original/${detail.backdrop_path}")`,
               backgroundPosition: "center center",
-              height: "70vh",
             }}
           >
             <div className="layout">

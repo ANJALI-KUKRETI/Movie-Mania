@@ -1,5 +1,6 @@
 .detailPage {
   position: relative;
+  height: 70vh;
 }
 .layout {
   position: absolute;
@@ -123,8 +124,8 @@
     height: 54vh;
   }
   .image img {
-    height: 12rem;
-    width: 10rem;
+    height: 13rem;
+    width: 8rem;
   }
   .detailsIn {
     margin-left: 1rem;

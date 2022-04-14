@@ -102,6 +102,9 @@
   }
 }
 @media (max-width: 800px) {
+  .left {
+    z-index: 11;
+  }
   .menu div {
     font-size: 0.9rem;
   }
