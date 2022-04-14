@@ -14,3 +14,9 @@
 .alert {
   color: yellow;
 }
+
+@media (max-width: 1000px) {
+  .searchPage {
+    margin: -1rem 1.5rem;
+  }
+}

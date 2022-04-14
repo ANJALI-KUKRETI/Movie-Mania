@@ -5,7 +5,12 @@
   /* padding: 1.7rem 2rem; */
   display: flex;
   justify-content: space-between;
-  flex-basis: 1 4 1;
   height: 100vh;
   transition: all 0.5s ease-in-out;
+}
+
+@media (max-width: 1000px) {
+  .App {
+    flex-direction: column;
+  }
 }

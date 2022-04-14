@@ -24,6 +24,7 @@ const SearchPage = ({ searchText, setFav, wishlist }) => {
         const { data } = await axios.get(
           `https://api.themoviedb.org/3/search/${params.type}?api_key=${API_KEY}&language=en-US&query=${searchText}&page=${page}&include_adult=false`
         );
+        // console.log(data);
         setContent(data.results);
         setLoading(false);
         setTotalPage(data.total_pages);
@@ -86,14 +87,14 @@ const SearchPage = ({ searchText, setFav, wishlist }) => {
           <div>
             {page > 1 && (
               <div className="btn" onClick={() => setPage(page - 1)}>
-                <div className="btnIn">Prev {page - 1}</div>
+                <div className="btnIn">Prev</div>
               </div>
             )}
           </div>
           <div>
-            {page <= totalPage && (
+            {totalPage > 1 && page <= totalPage && (
               <div className="btn" onClick={() => setPage(page + 1)}>
-                <div className="btnIn">Next {page + 1}</div>
+                <div className="btnIn">Next</div>
               </div>
             )}
           </div>

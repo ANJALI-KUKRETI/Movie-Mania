@@ -93,7 +93,7 @@ const DetailPage = ({ setFav }) => {
                     <div key={uuid()}>{genre.name}</div>
                   ))}
                 </div>
-                <div className="descrip">{truncate(detail.overview, 220)}</div>
+                <div className="descrip">{truncate(detail.overview, 150)}</div>
                 <div className="btns">
                   <a
                     href={`https://www.youtube.com/watch?v=${trailer}`}

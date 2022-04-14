@@ -91,3 +91,57 @@
   font-size: 0.85rem;
   font-weight: 500;
 }
+
+@media (max-width: 1350px) {
+  .layout {
+    padding: 4rem 1rem;
+  }
+}
+@media (max-width: 1200px) {
+  .title {
+    font-size: 2rem;
+  }
+  .detailsIn div {
+    font-size: 13px;
+  }
+  .character {
+    font-size: 0.7rem;
+  }
+  .about {
+    font-size: 0.6rem;
+  }
+  .cast img {
+    height: 8rem;
+  }
+  .image img {
+    height: 16rem;
+    width: 12rem;
+  }
+}
+@media (max-width: 500px) {
+  .detailPage {
+    height: 54vh;
+  }
+  .image img {
+    height: 12rem;
+    width: 10rem;
+  }
+  .detailsIn {
+    margin-left: 1rem;
+  }
+  .title {
+    font-size: 1.4rem;
+  }
+  .detailsIn div {
+    font-size: 10px;
+  }
+  .wrapperIn {
+    margin: 0rem 2rem;
+  }
+  .wrapperIn h2 {
+    font-size: 1.1rem;
+  }
+  .cast img {
+    height: 6rem;
+  }
+}

@@ -1,12 +1,9 @@
 .middle {
   flex: 4;
-  /* padding: 2.3rem 1.5rem; */
   border-right: 1px solid rgb(48, 47, 47);
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
-  /* align-items: center; */
 }
 ::-webkit-scrollbar {
   display: none;
@@ -121,4 +118,88 @@
 .add:hover {
   background-color: white;
   color: black;
+}
+.res {
+  width: 50%;
+  position: absolute;
+  padding: 1rem;
+  top: 0;
+  z-index: 111;
+  right: 0;
+  background-color: rgb(19, 18, 18, 0.8);
+}
+.hamburger {
+  display: none;
+  position: absolute;
+  right: 16px;
+  top: 23px;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+.menuR {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.close {
+  position: absolute;
+  right: 20px;
+  top: 25px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 333;
+}
+
+@media (max-width: 1250px) {
+  .content {
+    width: 64%;
+  }
+}
+@media (max-width: 1150px) {
+  .content {
+    padding: 1rem;
+  }
+  .name {
+    font-size: 2rem;
+  }
+  .description {
+    font-size: 13px;
+  }
+}
+@media (max-width: 1000px) {
+  .middle {
+    overflow-y: visible;
+  }
+  .hamburger {
+    display: block;
+  }
+  .homepage {
+    margin-top: -3rem;
+  }
+  .banner {
+    margin-top: 1.5rem;
+  }
+  .content {
+    padding: 5rem 1rem;
+  }
+}
+@media (max-width: 500px) {
+  .res {
+    width: 70%;
+  }
+  .content {
+    width: 90%;
+  }
+  .hamburger {
+    font-size: 1.5rem;
+  }
+  .header {
+    font-size: 1.1rem;
+  }
+  .btns button {
+    padding: 3px 9px;
+    font-size: 1rem;
+  }
 }

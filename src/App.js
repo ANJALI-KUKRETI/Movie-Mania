@@ -3,6 +3,7 @@ import { useState } from "react";
 import "./App.css";
 import Left from "./components/left/Left";
 import Middle from "./components/middle/Middle";
+
 import Right from "./components/right/Right";
 
 function App() {
@@ -16,7 +17,6 @@ function App() {
     localStorage.setItem("wishlist", JSON.stringify(items));
   };
   function setFav({ mov, type }) {
-    console.log(mov);
     const alreadyWishlisted = wishlist.find((wish) => wish.mov.id === mov.id);
     if (alreadyWishlisted) return;
     const temp = [{ mov, type }, ...wishlist];
@@ -35,7 +35,13 @@ function App() {
   }
   return (
     <div className="App">
-      <Left />
+      <Left
+        getSearch={getSearchHandler}
+        wishlist={wishlist}
+        removeWish={removeWishHandler}
+        type={type}
+      />
+
       <Middle setFav={setFav} searchText={searchText} wishlist={wishlist} />
       <Right
         wishlist={wishlist}

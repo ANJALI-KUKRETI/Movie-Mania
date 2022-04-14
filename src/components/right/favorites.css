@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
 }
-.icon {
+.iconH {
   font-size: 1.8rem;
   margin-left: 10px;
   margin-bottom: 14px;
@@ -21,15 +21,13 @@
   font-size: 0.7rem;
 }
 .favorites {
-  width: 90%;
+  width: 100%;
   overflow-y: scroll;
 }
 .favorites h2 {
   margin-bottom: 1.5rem;
 }
 .fav-card {
-  /* padding: 5px; */
-  /* background-color: rgb(58, 57, 57); */
   display: flex;
   margin-bottom: 1.6rem;
 }
@@ -79,4 +77,18 @@
 }
 .delete :hover {
   color: white;
+}
+
+@media (max-width: 1000px) {
+  .favorites {
+    overflow-y: visible;
+  }
+}
+@media (max-width: 500px) {
+  .iconH {
+    font-size: 1.5rem;
+  }
+  .num {
+    font-size: 0.5rem;
+  }
 }

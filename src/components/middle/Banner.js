@@ -11,12 +11,16 @@ const Banner = ({ banner, setFav }) => {
   useEffect(() => {
     async function getVideo() {
       const request = await axios.get(
-        `/${type}/${banner.id}/videos?api_key=4a0eac3b6692e4c56952182a8412654a`
+        `/${type}/${banner.id}/videos?api_key=0c44ec8e26aea5702eb3cb2e20f8938d`
       );
 
       setMovieTrailer(
-        request.data.results.filter((mov) => mov.name === "Official Trailer")[0]
-          .key
+        request.data.results.filter(
+          (mov) =>
+            mov.name.includes("Official Trailer") ||
+            mov.name.includes("Main Trailer") ||
+            mov.name === "'Official Trailer [Subtitled]'"
+        )[0].key
       );
     }
     getVideo();

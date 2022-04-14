@@ -10,6 +10,7 @@
   margin: 1rem;
 }
 .card {
+  height: 22.2rem;
   position: relative;
   border: 15px solid rgb(17, 17, 17);
   background-color: rgb(40, 39, 39);
@@ -56,4 +57,46 @@
   background-color: rgb(167, 5, 5);
   color: white;
   cursor: default;
+}
+
+@media (max-width: 1150px) {
+  .heading {
+    font-size: 1.2rem;
+  }
+  .card {
+    height: 21.5rem;
+    position: relative;
+    border: 8px solid rgb(17, 17, 17);
+    background-color: rgb(40, 39, 39);
+  }
+  .card img {
+    height: 14rem;
+  }
+}
+@media (max-width: 1000px) {
+  .card {
+    border: 22px solid rgb(17, 17, 17);
+  }
+}
+@media (max-width: 500px) {
+  .card {
+    border: 10px solid rgb(17, 17, 17);
+    height: 19.5rem;
+  }
+  .heading {
+    font-size: 1.1rem;
+  }
+  .newPlus,
+  .card-content .plus {
+    font-size: 13px;
+  }
+  .card-content .info {
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 400px) {
+  .card {
+    border: 23px solid rgb(17, 17, 17);
+    height: 20.5rem;
+  }
 }
