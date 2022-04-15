@@ -28,7 +28,6 @@
     font-size: 1.2rem;
   }
   .fav-card img {
-    /* height: 4rem; */
     margin-right: 10px;
   }
   .searchBar input {
@@ -48,18 +47,12 @@
   .searchBar {
     margin-bottom: 0.5rem;
   }
-  /* .searchBar input {
-    padding: 2px 7px;
-    width: 8rem;
-    margin-right: -5px;
-    margin-top: 5px;
-  } */
+
   .searchBar input {
     padding: 5px 7px;
     width: 8rem;
-    top: 4.4rem;
+    top: 4rem;
     left: 36px;
-    /* margin: auto; */
     width: 79%;
     position: absolute;
   }

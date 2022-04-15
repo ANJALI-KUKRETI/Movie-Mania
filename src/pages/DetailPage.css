@@ -147,6 +147,9 @@
   .cast img {
     height: 6rem;
   }
+  .noImage {
+    width: 4.2rem;
+  }
   .genres {
     display: flex;
     flex-wrap: wrap;
