@@ -17,7 +17,7 @@ const Row = ({ heading, data, setFav, type, wishlist }) => {
             <Card
               mov={mov}
               key={uuid()}
-              // setFav={setFav}
+              setFav={setFav}
               type={type}
               wishlist={wishlist}
             />
