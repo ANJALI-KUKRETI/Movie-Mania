@@ -35,52 +35,53 @@ const Middle = ({ setFav, searchText, wishlist }) => {
     "Western",
   ];
 
-  useEffect(() => {
-    async function temp() {
-      async function getTrending() {
-        setLoading(true);
-        const res = await axios.get(requests.fetchTrendingMovie);
-        setTrendingMovie(res.data.results);
-        setLoading(false);
-        return res.data.results;
-      }
-      getTrending();
-      async function getTop() {
-        setLoading(true);
-        const res = await axios.get(requests.fetchTopRatedMovie);
-        setTopMovie(res.data.results);
-        setLoading(false);
-      }
-      getTop();
-      async function getTrendingShow() {
-        setLoading(true);
-        const res = await axios.get(requests.fetchTrendingShow);
-        setTrendingShow(res.data.results);
-        setLoading(false);
-        return res.data.results;
-      }
-      getTrendingShow();
-      async function getTopShow() {
-        setLoading(true);
-        const res = await axios.get(requests.fetchTopRatedShow);
-        setTopShow(res.data.results);
-        setLoading(false);
-      }
-      getTopShow();
-
-      //==================================
-      const movieForBanner = await getTrending();
-      setBannerMovie(
-        movieForBanner[Math.floor(Math.random() * movieForBanner.length - 1)]
-      );
-      const showForBanner = await getTrendingShow();
-      setBannerShow(
-        showForBanner[Math.floor(Math.random() * showForBanner.length - 1)]
-      );
+  async function temp() {
+    async function getTrending() {
+      setLoading(true);
+      const res = await axios.get(requests.fetchTrendingMovie);
+      setTrendingMovie(res.data.results);
+      setLoading(false);
+      return res.data.results;
     }
+    getTrending();
+    async function getTop() {
+      setLoading(true);
+      const res = await axios.get(requests.fetchTopRatedMovie);
+      setTopMovie(res.data.results);
+      setLoading(false);
+    }
+    getTop();
+    async function getTrendingShow() {
+      setLoading(true);
+      const res = await axios.get(requests.fetchTrendingShow);
+      setTrendingShow(res.data.results);
+      setLoading(false);
+      return res.data.results;
+    }
+    getTrendingShow();
+    async function getTopShow() {
+      setLoading(true);
+      const res = await axios.get(requests.fetchTopRatedShow);
+      setTopShow(res.data.results);
+      setLoading(false);
+    }
+    getTopShow();
+
+    const movieForBanner = await getTrending();
+    setBannerMovie(
+      movieForBanner[Math.floor(Math.random() * movieForBanner.length - 1)]
+    );
+    const showForBanner = await getTrendingShow();
+    setBannerShow(
+      showForBanner[Math.floor(Math.random() * showForBanner.length - 1)]
+    );
+  }
+
+  useEffect(() => {
     temp();
   }, []);
 
+  // =====================Open and close side nav================
   function openSideNav() {
     setSideNav(!sideNav);
   }

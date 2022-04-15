@@ -33,6 +33,7 @@ const Left = ({ getSearch, wishlist, removeWish, type }) => {
         </span>
         Movie Mania
       </div>
+      {/* ================Responsive SearchBar and wishlist icon================= */}
       <div className="resp">
         <div className="searchBar searchBarR">
           <InputArea getSearch={getSearch} />

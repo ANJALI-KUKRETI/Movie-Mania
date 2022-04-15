@@ -1,9 +1,7 @@
 import { useState } from "react";
-
 import "./App.css";
 import Left from "./components/left/Left";
 import Middle from "./components/middle/Middle";
-
 import Right from "./components/right/Right";
 
 function App() {
@@ -13,9 +11,12 @@ function App() {
   );
   const [searchText, setSearchText] = useState("");
 
+  // ===============Save to localStorage====================
   const saveToLocalStorage = (items) => {
     localStorage.setItem("wishlist", JSON.stringify(items));
   };
+
+  // ===================Set as favorite=======================
   function setFav({ mov, type }) {
     console.log(mov, type);
     const alreadyWishlisted = wishlist.find((wish) => wish.mov.id === mov.id);
@@ -26,11 +27,14 @@ function App() {
     setType(type);
   }
 
+  // ======================Remove from favorite====================
   const removeWishHandler = (id) => {
     const temp = wishlist.filter((tmp) => tmp.mov.id !== id);
     setWishlist(temp);
     saveToLocalStorage(temp);
   };
+
+  // =====================Pass search value to middle component from right========================
   function getSearchHandler(text) {
     setSearchText(text);
   }
@@ -42,7 +46,6 @@ function App() {
         removeWish={removeWishHandler}
         type={type}
       />
-
       <Middle setFav={setFav} searchText={searchText} wishlist={wishlist} />
       <Right
         wishlist={wishlist}

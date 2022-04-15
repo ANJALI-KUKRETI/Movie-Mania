@@ -24,7 +24,6 @@ const SearchPage = ({ searchText, setFav, wishlist }) => {
         const { data } = await axios.get(
           `https://api.themoviedb.org/3/search/${params.type}?api_key=${API_KEY}&language=en-US&query=${searchText}&page=${page}&include_adult=false`
         );
-        // console.log(data);
         setContent(data.results);
         setLoading(false);
         setTotalPage(data.total_pages);
@@ -34,6 +33,9 @@ const SearchPage = ({ searchText, setFav, wishlist }) => {
     }
     getData();
   }, [searchText, params.type, page]);
+  useEffect(() => {
+    setPage(1);
+  }, [searchText, params.type]);
 
   return (
     <div className="searchPage">

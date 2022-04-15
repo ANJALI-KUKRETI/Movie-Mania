@@ -22,15 +22,6 @@ export const settings = {
         slidesToScroll: 1,
       },
     },
-    // {
-    //   breakpoint: 400,
-    //   settings: {
-    //     infinite: true,
-    //     speed: 500,
-    //     slidesToShow: 1,
-    //     slidesToScroll: 1,
-    //   },
-    // },
   ],
 };
 export const settingsTwo = {
