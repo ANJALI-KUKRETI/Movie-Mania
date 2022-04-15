@@ -10,7 +10,7 @@
   margin: 1rem;
 }
 .card {
-  height: 22.2rem;
+  /* height: 22.2rem; */
   position: relative;
   border: 15px solid rgb(17, 17, 17);
   background-color: rgb(40, 39, 39);
@@ -64,7 +64,7 @@
     font-size: 1.2rem;
   }
   .card {
-    height: 19rem;
+    /* height: 19rem; */
     position: relative;
     border: 8px solid rgb(17, 17, 17);
     background-color: rgb(40, 39, 39);
@@ -76,7 +76,7 @@
     height: 12rem;
   }
   .row .card {
-    height: 17rem;
+    /* height: 17rem; */
   }
   .card-content .info {
     font-size: 0.75rem;
@@ -87,16 +87,16 @@
     border: 22px solid rgb(17, 17, 17);
   }
   .row .card {
-    height: 18rem;
+    /* height: 18rem; */
   }
 }
 @media (max-width: 500px) {
   .row .card {
     border: 6px solid rgb(17, 17, 17);
-    height: 14.5rem;
+    /* height: 15.5rem; */
   }
   .card {
-    height: 15.5rem;
+    /* height: 15.5rem; */
   }
   .card img {
     height: 10rem;
@@ -110,10 +110,8 @@
   }
   .card-content .info {
     font-size: 0.8rem;
-    margin-top: 0;
+    margin-top: 5px;
   }
-}
-@media (max-width: 400px) {
   .card {
     border: 6px solid rgb(17, 17, 17);
     height: 15rem;
@@ -122,3 +120,12 @@
     height: 10rem;
   }
 }
+/* @media (max-width: 400px) {
+  .card {
+    border: 6px solid rgb(17, 17, 17);
+    height: 15rem;
+  }
+  .row .card img {
+    height: 10rem;
+  }
+} */

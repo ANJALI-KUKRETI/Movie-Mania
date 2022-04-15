@@ -8,6 +8,7 @@ const InputArea = ({ getSearch }) => {
   const fetchSearch = async (e) => {
     e.preventDefault();
     getSearch(searchText);
+    setSearchText("");
   };
 
   return (
@@ -18,7 +19,7 @@ const InputArea = ({ getSearch }) => {
             type="text"
             className="seacrh"
             placeholder="Search"
-            // value={searchText}
+            value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
           />
         </Link>

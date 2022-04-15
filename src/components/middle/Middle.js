@@ -110,6 +110,7 @@ const Middle = ({ setFav, searchText, wishlist }) => {
                   className={(navdata) =>
                     navdata.isActive ? "activeL" : "link"
                   }
+                  onClick={closeSideNav}
                 >
                   Home
                 </NavLink>
@@ -121,6 +122,7 @@ const Middle = ({ setFav, searchText, wishlist }) => {
                     className={(navdata) =>
                       navdata.isActive ? "activeL" : "link"
                     }
+                    onClick={closeSideNav}
                   >
                     {cat}
                   </NavLink>

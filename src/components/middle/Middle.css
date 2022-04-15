@@ -45,13 +45,19 @@
   border-radius: 20px;
   height: 26rem;
 }
-
 .content {
   padding: 2rem;
-  /* position: absolute; */
+  position: absolute;
   width: 60%;
   bottom: 0;
 }
+.help {
+  position: absolute;
+  background-color: rgb(17, 16, 16, 0.3);
+  height: 100%;
+  width: 100%;
+}
+
 .content div {
   margin: 10px 0px;
 }
@@ -126,6 +132,7 @@
   top: 0;
   z-index: 111;
   right: 0;
+  color: rgb(170, 168, 168);
   background-color: rgb(19, 18, 18, 0.8);
 }
 .hamburger {
@@ -151,6 +158,9 @@
   z-index: 2222;
   cursor: pointer;
   z-index: 333;
+}
+.homepage {
+  padding: 2.3rem 1.5rem;
 }
 
 @media (max-width: 1250px) {
@@ -182,6 +192,9 @@
   .banner {
     margin-top: 1.5rem;
   }
+  .homepage {
+    margin-top: -3rem;
+  }
 }
 @media (max-width: 500px) {
   .banner {
@@ -210,5 +223,9 @@
   }
   .name {
     font-size: 1.6rem;
+  }
+  .homepage {
+    padding: 0.3rem 0.7rem;
+    margin-top: 2.5rem;
   }
 }

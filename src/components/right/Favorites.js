@@ -9,7 +9,7 @@ const Favorites = ({ wishlist, removeWish, type }) => {
   return (
     <div className="favorites">
       <div className="head">
-        <h2>My WishList</h2>
+        <h2>My WatchList</h2>
         <div className="iconH">
           <BsFillHeartFill />
           <div className="num">{wishlist.length}</div>

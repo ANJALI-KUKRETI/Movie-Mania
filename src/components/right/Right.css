@@ -57,9 +57,9 @@
   .searchBar input {
     padding: 5px 7px;
     width: 8rem;
-    top: 4rem;
+    top: 4.4rem;
     left: 36px;
-    margin: auto;
+    /* margin: auto; */
     width: 79%;
     position: absolute;
   }

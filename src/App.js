@@ -17,6 +17,7 @@ function App() {
     localStorage.setItem("wishlist", JSON.stringify(items));
   };
   function setFav({ mov, type }) {
+    console.log(mov, type);
     const alreadyWishlisted = wishlist.find((wish) => wish.mov.id === mov.id);
     if (alreadyWishlisted) return;
     const temp = [{ mov, type }, ...wishlist];

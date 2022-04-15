@@ -5,6 +5,7 @@ import Row from "../components/middle/Row";
 import "../components/middle/Middle.css";
 import Spinner from "../components/Spinner/Spinner";
 import "../components/middle/Middle.css";
+import "../components/middle/Row.css";
 
 const HomePage = ({
   top,
@@ -16,7 +17,7 @@ const HomePage = ({
   wishlist,
 }) => {
   return (
-    <div className="homepage" style={{ padding: "2.3rem 1.5rem" }}>
+    <div className="homepage">
       <div className="header">
         <div>
           <NavLink

@@ -41,6 +41,7 @@ const Banner = ({ banner, setFav }) => {
           backgroundPosition: "center center",
         }}
       >
+        <div className="help"></div>
         <div className="content">
           <div className="name">{banner.title || banner.name}</div>
           <div className="inner-content">
@@ -60,10 +61,7 @@ const Banner = ({ banner, setFav }) => {
                 <FaPlay /> <span> PLAY</span>
               </a>
             </button>
-            {/* <button
-              className="add"
-              onClick={() => setFav({ banner: banner, type: type })}
-            >
+            {/* <button className="add" onClick={() => setFav({ banner, type })}>
               <BsPlusLg /> <span> MY LIST</span>
             </button> */}
           </div>

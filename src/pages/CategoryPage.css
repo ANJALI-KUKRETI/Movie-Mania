@@ -36,4 +36,14 @@
   .inn {
     width: 10rem;
   }
+  .category {
+    margin: 0;
+    margin-top: 3rem;
+  }
+  .loadMore {
+    margin: 1rem;
+  }
+  .btnIn {
+    font-size: 12px;
+  }
 }
